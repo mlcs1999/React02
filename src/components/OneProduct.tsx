@@ -4,10 +4,9 @@ import { Product } from '../models/product';
 interface OneProductProps {
   product: Product;
   onAdd: (id: number) => void;
-  onRemove: (id: number) => void;
 }
 
-const OneProduct : React.FC<OneProductProps> = ({ product, onAdd, onRemove }) => {
+const OneProduct : React.FC<OneProductProps> = ({ product, onAdd }) => {
   const design = { margin: 10, borderStyle: "dashed" };
   
   return (
@@ -19,7 +18,7 @@ const OneProduct : React.FC<OneProductProps> = ({ product, onAdd, onRemove }) =>
           {product.description}
         </p>
         <a className="btn" onClick={() => onAdd(product.id)}><FaPlus/></a>
-        <a className="btn" onClick={() => onRemove(product.id)}><FaMinus/></a>
+        <a className="btn"><FaMinus/></a>
       </div>
     </div>
   )

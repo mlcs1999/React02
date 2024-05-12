@@ -37,30 +37,13 @@ function App() {
       }
     });
   };
-  
-  const removeFromCart = (id: number) => {
-  products.map((product) => {
-      if (product.id === id) {
-        if (product.amount > 0) {
-          product.amount = product.amount - 1;
-          const a = cartNum - 1;
-          setCartNum(a);
-          console.log("product id=", product.id, "amount=", product.amount);
-        } else {
-          alert("Amount of product is already 0.");
-        }
-      }
-    });
-  };
-
-
 
   return (
     <>
       {/* <h1>Cao {fullName(user)}</h1>
       {element} */}
       <NavBar cartNum={cartNum}/>
-      <Products products={products} onAdd={addToCart} onRemove={removeFromCart} />
+      <Products products={products} onAdd={addToCart} />
     </>
   )
 }

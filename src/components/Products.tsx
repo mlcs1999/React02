@@ -6,10 +6,9 @@ import {Product} from '../models/product';
 interface ProductsProps {
   products: Product[];
   onAdd: (id: number) => void;
-  onRemove: (id: number) => void;
 }
 
-const Products: React.FC<ProductsProps> = ({ products, onAdd, onRemove }) => {
+const Products: React.FC<ProductsProps> = ({ products, onAdd }) => {
   return (
     <div className="all-products">
         {products.map((product) => (
@@ -17,7 +16,7 @@ const Products: React.FC<ProductsProps> = ({ products, onAdd, onRemove }) => {
         key={product.id} 
         product={product}
         onAdd={() => onAdd(product.id)}
-        onRemove={() => onRemove(product.id)} />
+         />
       ))}
     </div>
   )
